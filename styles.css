@@ -17,7 +17,6 @@
 
 body {
     /* 1. Degradado radial */
-    /* Sintaxis: radial-gradient(forma en posición, color-centro, color-borde) */
     background: radial-gradient(circle at center, #09090b 0%, #09090b 100%);
     
     /* 2. Truco PRO: Fondo fijo */
