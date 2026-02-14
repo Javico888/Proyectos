@@ -16,10 +16,19 @@
 }
 
 body {
-    background-color: var(--color-fondo);
+    /* 1. Degradado radial */
+    /* Sintaxis: radial-gradient(forma en posición, color-centro, color-borde) */
+    background: radial-gradient(circle at center, #09090b 0%, #09090b 100%);
+    
+    /* 2. Truco PRO: Fondo fijo */
+    background-attachment: fixed;
+    
+    /* 3. Asegurar que cubra toda la altura */
+    min-height: 100vh;
     color: var(--texto-blanco);
     font-family: var(--fuente-cuerpo);
     line-height: 1.6;
+    margin: 0; 
 }
 
 a { text-decoration: none; color: inherit; }
@@ -88,7 +97,7 @@ svg {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-left: 30px; /* Separación extra del menú */
+    margin-left: 25px; /* Separación extra del menú */
 }
 
 .btn-admin {
@@ -126,7 +135,7 @@ svg {
 /* --- SECCIÓN PRINCIPAL (HERO) --- */
 .seccion-principal {
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 80px 20px 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,12 +165,36 @@ svg {
 }
 
 .seccion-principal h1 {
-    font-family: var(--fuente-titulos);
-    font-size: 5rem;
+    /* 1. Asegurar la fuente Oswald (que es estilo "cartel") */
+    font-family: 'Oswald', sans-serif;
+    
+    /* 2. Grosor máximo */
+    font-weight: 700;
+    
+    /* 3. Tamaño grande */
+    font-size: 5.5rem; /* Ajusta este número si lo quieres más grande */
+    
+    /* 4. Mayúsculas obligatorias */
     text-transform: uppercase;
-    line-height: 1;
-    color: #b0b0b0; 
-    margin-bottom: 20px;
+    
+    /* 5. Altura de línea apretada (para que no se separen los renglones) */
+    line-height: 0.85;
+    
+    /* 6. Color grisáceo */
+    color: #979798;
+    
+    /* --- AQUÍ ESTÁN LOS TRUCOS VISUALES --- */
+    
+    /* 7. "letter-spacing": Números negativos juntan las letras entre sí */
+    letter-spacing: -4px; 
+    
+    /* 8. "transform: scaleY": ESTIRA la letra hacia arriba sin engordarla. 
+       El 1.3 significa "un 30% más alta de lo normal" */
+    transform: scaleY(1.1); 
+    
+    /* 9. Margen ajustado (al estirarla, ocupa más espacio vertical) */
+    margin-bottom: 40px; 
+    margin-top: 20px;
     max-width: 900px;
 }
 
@@ -193,8 +226,13 @@ svg {
     padding: 40px 20px;
     border-radius: 10px;
     text-align: center;
-    border: 1px solid #1a1a1a;
+    border: 1.5px solid #222224;
     transition: transform 0.3s ease;
+}
+.tarjeta-estadistica:hover {
+    transform: translateY(-0px); /* Se eleva un poquito */
+    background: linear-gradient(to bottom right, #18171a, #2b1519); /* El rojo se hace un poco más intenso */
+    border-color: #2e2e30; /* El borde se pone rojo */
 }
 
 .icono-stats {
@@ -256,12 +294,19 @@ svg {
 }
 
 .tarjeta-caracteristica {
-    background-color: var(--color-tarjeta);
+    /*background-color: var(--color-tarjeta);*/
+    background: linear-gradient(to bottom right, #1a080a, #0a090b);
     padding: 30px;
     border-radius: 12px;
     display: flex;
     align-items: flex-start;
     gap: 20px;
+    transition: all 0.4s ease;
+    transition-delay: 0.2s;
+}
+.tarjeta-caracteristica:hover {
+    transform: translateY(-3px); /* Se eleva un poquito */
+    background: linear-gradient(to bottom right, #250b0e, #110f13); /* El rojo se hace un poco más intenso */
 }
 
 .caja-icono {
