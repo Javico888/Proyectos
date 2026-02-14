@@ -175,7 +175,7 @@ svg {
 /* --- SECCIÓN DE ESTADÍSTICAS --- */
 .seccion-estadisticas {
     padding: 40px 0 80px;
-    background-color: #080808; 
+    background-color: #101012; 
 }
 
 .rejilla-estadisticas {
@@ -185,7 +185,11 @@ svg {
 }
 
 .tarjeta-estadistica {
-    background-color: #111111;
+    /* CAMBIO AQUÍ: Degradado lineal */
+    /* Sintaxis: linear-gradient(dirección, color-inicial, color-final) */
+    background: linear-gradient(to bottom right, #151515, #211619);
+
+    /* El resto de propiedades se mantienen igual */
     padding: 40px 20px;
     border-radius: 10px;
     text-align: center;
